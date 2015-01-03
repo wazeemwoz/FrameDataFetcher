@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0051)http://ensabahnur.free.fr/BastonNew/index.php?id=17 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <title>3S Frames Data</title>
+    <link rel="stylesheet" type="text/css" href="./09_04_files/reset.css">
+	<link rel="stylesheet" type="text/css" href="./09_04_files/styles.css">
+	<link rel="stylesheet" type="text/css" href="./09_04_files/baston.css">
+	<link rel="stylesheet" type="text/css" href="./09_04_files/jquery-ui-1.8.15.custom_only_icons.css">
+	<script src="./09_04_files/functions.js" type="text/javascript"></script>
+	<script src="./09_04_files/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<script src="./09_04_files/jquery.dataTables.min.js" type="text/javascript"></script>
+	<script src="./09_04_files/baston.js" type="text/javascript"></script>
+	<script>
+
+</script>
+<style type="text/css">
+
+        /* Style for overlay and box */
+
+        .overlay{
+            background: transparent url(http://ensabahnur.free.fr/3sColorEditTools/Images/overlay.png) repeat top left;
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 100;
+        }
+
+        .box {
+            position: fixed;
+            top: 25%;
+            left: 30%;
+            
+            background-color: #000;
+            color: #7F7F7F;
+            padding: 10px;
+            
+            border: 2px solid #310;
+	
+			background-color: #000;
+			border-radius: 8px;
+			
+			-moz-box-shadow: 	0px 0px 10px 2px #4a1a0a;
+			-webkit-box-shadow: 0px 0px 10px 2px #4a1a0a;
+			box-shadow: 		0px 0px 10px 0px #4a1a0a;
+            
+			width: 530px;
+            height: 350px;
+            z-index: 101;
+            display: none;
+        }
+
+.boxclose {
+	float: right;
+	width: 20px;
+	height: 20px;
+	background: transparent url(http://ensabahnur.free.fr/3sColorEditTools/Images//close.png) no-repeat top left;
+	margin-top: -10px;
+	margin-right: -9px;
+	cursor: pointer;
+}
+
+.fullscreen {
+	float: right;
+	width: 18px;
+	height: 20px;
+	background: transparent url(http://ensabahnur.free.fr/3sColorEditTools/Images//fullscreen.png) no-repeat top left;
+	margin-top: -8px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.boxclose:hover		{ background-image: url(http://ensabahnur.free.fr/3sColorEditTools/Images//close_hover.png); }
+.fullscreen:hover	{ background-image: url(http://ensabahnur.free.fr/3sColorEditTools/Images//fullscreen_hover.png); }
+
+
+</style>
+</head>
+<body>
+<div id="mainDiv">
+<div id="divHide" style="background-color: #000; "></div><div id="top_char_menu" class="menu_layout" style="width: 1066px;">
+	<div id="topTitle">Makoto
+		 / まこと / マコト
+	</div>
+	<div id="topTypeData"><span>'Misc'</span></div>
+	<div id="loading" class=""></div>
+</div><div id="backToSelect" class="menu_layout" title="Back to char select screen...">
+Back...
+</div>
+<div id="toggleMenu" class="menu_layout" title="Display/hide left menu...">
+Toggle Menu
+</div>
+<div id="left_char_menu" class="menu_layout">
+<div id="charInfo">
+	<img src="./09_04_files/makoto-stance.gif">
+</div>
+<ul class="leftMenuList">
+	<span>General</span>
+	<li id="general_basic">- Basic info</li>
+	<li id="general_moves">- Moves list</li>
+</ul>
+
+<ul class="leftMenuList">
+	<span>Frames data &amp; Hitboxes</span>
+	<li id="fd_normals">- Normals</li>
+	<li id="fd_specials">- Specials</li>
+	<li id="fd_supers">- Super Arts</li>
+	<li id="fd_misc">- Misc.</li>
+</ul>
+
+<ul class="leftMenuList">
+	<span>Notes (0)</span>
+</ul>
+	<div id="toggleBg" class="bgToggle" title="Toggle white background..."></div>
+	<div id="toggleBg2" class="bgToggle" title="Toggle red background..."></div>
+	<div id="toggleShadow" class="bgToggle" title="Toggle elements border shadow..."></div>
+</div><div id="content_char"><div class="">
+<dl class="miscFd">
+<dt class="miscFd">Jump data</dt>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_jumpNeutral"></div><p>Neutral jump startup</p> : 4</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_jumpBackward"></div><p>Backward jump startup</p> : 4</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_jumpForward"></div><p>Forward jump startup</p> : 4</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_superjumpNeutral"></div><p>Neutral superjump startup</p> : 6</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_superjumpBackward"></div><p>Backward superjump startup</p> : 6</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_superjumpForward"></div><p>Forward superjump startup</p> : 6</dd>
+</dl>
+</div>
+<div class="">
+<dl class="miscFd">
+<dt class="miscFd">Dash data</dt>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_dashBackwardFull"></div><p>Dash backward (full animation)</p> : 24</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_dashBackward"></div><p>Dash backward (recovery cancelled)</p> : 15</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_dashForwardFull"></div><p>Dash forward (full animation)</p> : 40</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_dashForward"></div><p>Dash forward (recovery cancelled)</p> : 12</dd>
+</dl>
+</div>
+<div class="">
+<dl class="miscFd">
+<dt class="miscFd">Wake up data</dt>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_wakeUp"></div><p>Wakeup</p> : 71 (37 + 34)</dd>
+<dd class="miscFd"><div class="linkHitboxes floatLeft" id="load_wakeUpQuickRoll"></div><p>Wakeup (quick roll)</p> : 43 (13 + 30)</dd>
+</dl>
+</div>
+
+</div><script>
+var bBarDisplayed = false;
+
+// default behavior...
+//general_moves, fd_normals
+loadData('content_char', '17', 'fd_normals');
+
+// button back to select screen...
+$('#backToSelect').click(function () {
+	location.href = "index.php";
+});
+
+// hide menu toogle...
+$('#toggleMenu').click(function () {
+	var sDisplay = $('#left_char_menu').css('display');
+	
+	$('#left_char_menu').toggle('slow');
+	
+	if(sDisplay == 'none') {
+		// shift content_char by 250px to the left...
+		$('#content_char').css('left', '250px');
+	}
+	else {
+		// shift content_char by 250px to the left...
+		$('#content_char').css('left', '10px');
+	}
+});
+
+$('li').click(function () {
+	loadData('content_char', 17, $(this).attr("id"));
+});
+
+//toggle bg color...
+$('#toggleBg').click(function () {
+	$('body').toggleClass("bgToggleColor3");
+});
+
+//toggle radius...
+$('#toggleBg2').click(function () {
+	$('body').toggleClass("bgToggleColor2");
+});
+
+//toggle bg color...
+$('#toggleShadow').click(function () {
+	$('*').toggleClass("noShadow");
+});
+
+//mouse position detection for nav bar...
+/*
+$(document).mousemove(function(e){
+	if(e.pageX == 0 && e.pageY < 15) {
+		// display nav bar...
+		$('#nav').show('slow');
+		bBarDisplayed = true;
+	}
+	else {
+		if(e.pageY > 50) {
+			$('#nav').hide();
+		}
+	}
+
+	//$('#debug').html(e.pageX +', '+ e.pageY);
+});
+*/
+
+// auto resize...
+var iNewWidth = screen.width - $('#left_char_menu').width() - 100;
+
+$('#top_char_menu').width(iNewWidth);
+
+</script>
+<div id="debug" class="debug"></div>
+<div class="compteur">
+    <img src="./09_04_files/wwwcount.cgi">
+</div></div>
+
+</body></html>
