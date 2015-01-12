@@ -51,7 +51,7 @@ public class FrameDataFetcher {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String path = "C:\\Documents and Settings\\Waseem\\Desktop\\ESN\\";
+		String path = "/home/vhd/git/FrameDataFetcher/Resources/";
 		for(int i = 1; i < 21; i++){
 			String cId = ""+i;
 			if(i < 10){
@@ -307,20 +307,22 @@ public class FrameDataFetcher {
 	
 	private CancelableSDO translateCancelData(Element td){
 		CancelableSDO cancelable = new CancelableSDO();
-		Elements cancels = td.select("div").select(":not([title=\"??\"])").select(":not(.BcancelBit_X)");
+		Elements cancels = td.select("div").select(":not([title=\"??\"])");
 		for(Element cancel : cancels){
-			if(cancel.attr("title").equals("SA")){
-				cancelable._super = true;
-			}else if(cancel.attr("title").equals("SP")){
-				cancelable._special = true;
-			}else if(cancel.attr("title").equals("SC")){
-				cancelable._self = true;
-			}else if(cancel.attr("title").equals("NC")){
-				cancelable._chain = true;
-			}else if(cancel.attr("title").equals("DC")){
-				cancelable._dash = true;
-			}else if(cancel.attr("title").equals("SJ")){
-				cancelable._sjump = true;
+			if(!cancel.hasClass("BcancelBit_X")){
+				if(cancel.text().equals("SA")){
+					cancelable._super = true;
+				}else if(cancel.text().equals("SP")){
+					cancelable._special = true;
+				}else if(cancel.text().equals("SC")){
+					cancelable._self = true;
+				}else if(cancel.text().equals("NC")){
+					cancelable._chain = true;
+				}else if(cancel.text().equals("DC")){
+					cancelable._dash = true;
+				}else if(cancel.text().equals("SJ")){
+					cancelable._sjump = true;
+				}
 			}
 		}
 		return cancelable;
@@ -369,7 +371,7 @@ public class FrameDataFetcher {
 	}
 	
 	private void writeCharJsonToFile(String char_json, String folderPath){
-		String filePath = folderPath + "extracted\\" + char_name + ".txt";
+		String filePath = folderPath + "extracted/" + char_name + ".txt";
         try {
 			//System.out.println("Writing to file");
 			File file = new File(filePath);
